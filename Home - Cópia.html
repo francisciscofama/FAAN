@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fundação Agostinho Neto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root{
+      --bg:#d4af37; 
+      --muted:#B3208D; /* tom quase rosa */
+      --primary:#FFFFFF;
+      --accent:#d4af37; 
+      --lg:#FFFFFF;
+      --lg2:#faf7f7;
+      --card:#FFFFFF;
+      --maxw:1100px;
+      font-family: Roboto, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#D669B2;line-height:1.5}
+    .container{max-width:var(--maxw);margin:0 auto;padding:24px}
+
+    /* Header */
+    header{background:#FFFFFF;color:#B3208D;position:sticky;top:0;z-index:50}
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 24px;
+       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      background:var(--lg2)
+     
+
+    }
+    .Icone{
+      margin-left: 1080px;
+      margin-top: 10px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:54px;
+      height:54px;
+      border-radius:8px;
+      background:var(--lg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#B3208D;
+      font-weight:700;
+      border: 2px solid #d4af37;
+
+    }
+
+   .gallery-slider {
+        
+        position: relative;
+        width: 100%;
+        max-width: 650px; 
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+        
+      }
+
+      .gallery-slider .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .gallery-slider img {
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 12px;
+        object-fit: cover;
+        height: 400px;
+        border: 1px solid black;
+      }
+
+      /* Botões */
+      .gallery-slider .prev,
+      .gallery-slider .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.5);
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .gallery-slider .prev { left: 10px; }
+      .gallery-slider .next { right: 10px; }
+
+      .gallery-slider .prev:hover,
+      .gallery-slider .next:hover {
+        background: rgba(0,0,0,0.8);
+      }
+
+    nav a{color:var(--muted);text-decoration:none;margin:0 10px;font-weight:500}
+    nav a:hover{color:var(--accent)}
+    .cta{background:var(--accent);color:#000;padding:10px 16px;border-radius:8px;font-weight:600;text-decoration:none}
+
+    /* Hero */
+    .hero {
+        display: grid;
+        grid-template-columns: 2fr 1fr; /* lado esquerdo (objetivos) maior que o aside */
+        gap: 32px;
+        align-items: start;
+        padding: 56px 24px;
+      }
+    .hero h1{font-family:Montserrat, sans-serif;font-size:36px;margin:0 0 12px;color:var(--accent)}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .actions{display:flex;gap:12px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:#000}
+    .btn-outline{border:2px solid var(--accent);color:var(--accent);background:transparent}
+    .hero-card{background:var(--card);padding:18px;border-radius:12px;color:var(--muted)}
+
+    /* Sections */
+    section{padding:36px 0}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:#FFFFFF;border-radius:10px;padding:20px;box-shadow:0 6px 18px rgba(0,0,0,0.6);color:var(--muted)}
+    .card h3{margin:0 0 8px;font-size:18px;color:var(--accent)}
+    .muted{color:var(--muted)}
+
+    /* Timeline */
+    .timeline{display:flex;flex-direction:column;gap:14px}
+    .timeline-item{display:flex;gap:16px;align-items:flex-start;color:var(--muted)}
+    .timeline-dot{width:14px;height:14px;border-radius:50%;background:var(--accent);margin-top:6px}
+
+
+
+    /* Programs */
+    .programs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+
+    /* Footer */
+    footer{background:black;color:var(--muted);padding:28px}
+    footer .grid{display:grid;grid-template-columns:1fr 220px;gap:18px;max-width:var(--maxw);margin:0 auto}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;padding:28px}
+      nav{display:none}
+      .topbar{padding:10px}
+    }
+
+    /* small helpers */
+    .center{display:flex;align-items:center;justify-content:center}
+    .chip{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--accent);color:#000;font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="Icone">
+      <!-- <div>
+          <a href="https://facebook.com" target="_blank" style="color:#1877F2;font-size:20px;">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://youtube.com" target="_blank" style="color:#FF0000;font-size:20px;">
+            <i class="fab fa-youtube"></i>
+          </a> 
+      </div> -->
+    </div>
+
+    <div class="topbar container">
+
+      <div class="brand">
+        <div class="logo">FAAN</div>
+        <div>
+          <div style="font-weight:700">Fundação Dr. António A. Neto</div>
+          <div style="font-size:12px;color:var(--muted)">Memória • Cultura • Educação</div>
+        </div>
+      </div>
+      
+      <nav aria-label="Menu principal">
+        <a href="#">INÍCIO</a>
+        <a href="#sobre">SOBRE NÓS</a>
+        <a href="#programas">PROGRAMAS</a>
+        <a href="#biblioteca">BIBLIOTECA</a>
+        <a href="#noticias">NOTÍCIAS</a>
+        <a href="#contactos">CONTACTOS</a>
+      </nav>
+      <div style="display:flex;gap:12px;align-items:center">
+        <img src="logo.png" alt="Logo" style="width:100px;height:120px;object-fit:cover;">
+      </div>
+
+    </div>
+
+    <div class="hero container">
+      <div>
+        <!-- <div class="chip">Preservar a memória · Inspirar o futuro</div> -->
+         
+      <!--  <div class="gallery-slider">
+        <div class="slides">
+          <img src="premio_int.jpg" alt="Foto histórica 1">
+          <img src="drAgostinho1.jpg" alt="Foto histórica 2">
+          <img src="drAgostinho2.jpg" alt="Foto histórica 3">
+        </div>
+
+        <!-- Botões -->
+       <!--  <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div> -- -->
+
+
+        <h1>Obejctivos da Fundação</h1>
+        <p class="muted">Seja bem-vindo ao portal da Fundação Dr. António Agostinho Neto, nosso objectivo é promover a pesquisa e divulgação da vida e da obra do Dr. António Agostinho Neto; Promover actividades para melhorar o bem-estar e a condição dos angolanos; A promoção da educação, da ciência, da tecnologia e da cultura, para incentivar a criação e a inovação, de todo o tipo e sob todas as formas, e a investigação científica e tecnológica..</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#sobre">Saiba Mais</a>
+          <a class="btn btn-outline" href="#programas">Nossos Programas</a>
+        </div>
+
+          <div class="actions">
+           <br/>
+        </div>
+
+        <div class="gallery-slider">
+          <div class="slides">
+            <img src="angola.jpg" alt="Foto histórica 1">
+            <img src="drAgostinho1.jpg" alt="Foto histórica 2">
+            <img src="drAgostinho2.jpg" alt="Foto histórica 3">
+          </div>
+
+          
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+      </div>
+        <section style="margin-top:22px">
+          <div class="cards">
+            <div class="card"><h3>Missão</h3><p class="muted">Preservar a memória histórica e promover a educação e cultura nacionais.</p></div>
+            <div class="card"><h3>Visão</h3><p class="muted">Ser referência em investigação e promoção cultural em Angola.</p></div>
+            <div class="card"><h3>Valores</h3><p class="muted">Integridade, inclusão, conhecimento e memória.</p></div>
+          </div>
+        </section>
+
+        
+      </div>
+
+      <aside class="hero-card">
+        <div style="text-align:center;margin-bottom:14px;color:var(--accent)">
+          <strong>Galeria de Fotos</strong>
+        </div>
+
+        <div class="gallery">
+          <img src="drAgostinho.jpg" alt="Foto histórica 1">
+          <img src="drAgostinho1.jpg" alt="Foto histórica 2">
+          <img src="drAgostinho2.jpg" alt="Foto histórica 3">
+          <img src="drAgostinho3.jpg" alt="Foto histórica 4">
+        </div>
+
+        <div style="margin-top:12px;text-align:center">
+          <a class="btn" style="background:var(--accent);color:#000;border-radius:8px;padding:8px 12px;text-decoration:none">
+            Ver Mais Fotos
+          </a>
+        </div>
+</aside>
+
+
+
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="sobre">
+      <h2 style="font-family:Montserrat, sans-serif;color:var(--accent)">Sobre a Fundação</h2>
+      <p class="muted">A Fundação Agostinho Neto trabalha para valorizar a herança cultural e intelectual do primeiro Presidente de Angola, desenvolvendo programas educativos, culturais e de investigação.</p>
+    </section>
+
+    <section id="legado">
+      <h2 style="font-family:Montserrat, sans-serif;color:var(--accent)">Linha do Tempo</h2>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-dot"></div><div><strong>1922</strong> — Nascimento de Agostinho Neto em Luanda. <div class="muted">(Breve descrição)</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div><strong>1950s</strong> — Activismo e trajectória política. <div class="muted">(Breve descrição)</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div><strong>1975</strong> — Proclamação da Independência de Angola. <div class="muted">(Breve descrição)</div></div></div>
+      </div>
+    </section>
+
+    <section id="programas">
+      <h2 style="font-family:Montserrat, sans-serif;color:var(--accent)">Programas</h2>
+      <div class="programs">
+        <div class="card"><h3>Educação</h3><p class="muted">Formação, bolsas e parcerias com escolas e universidades.</p></div>
+        <div class="card"><h3>Cultura</h3><p class="muted">Eventos, exposições e apoio a artistas locais.</p></div>
+        <div class="card"><h3>Investigação</h3><p class="muted">Projetos de investigação histórica e publicações.</p></div>
+        <div class="card"><h3>Arquivo Digital</h3><p class="muted">Digitalização de documentos, discursos e fotos.</p></div>
+      </div>
+    </section>
+
+    <section id="biblioteca">
+      <h2 style="font-family:Montserrat, sans-serif;color:var(--accent)">Biblioteca & Publicações</h2>
+      <div class="cards">
+        <div class="card"><h3>Discursos Selecionados</h3><p class="muted">Coleção de discursos e textos de Agostinho Neto.</p></div>
+        <div class="card"><h3>Livros & Estudos</h3><p class="muted">Catálogo de publicações e trabalhos académicos.</p></div>
+        <div class="card"><h3>Multimédia</h3><p class="muted">Galeria de fotos e vídeos históricos.</p></div>
+      </div>
+    </section>
+
+    <section id="noticias">
+      <h2 style="font-family:Montserrat, sans-serif;color:var(--accent)">Notícias & Eventos</h2>
+      <div class="cards">
+        <article class="card"><h3>Exposição: Memória e Identidade</h3><p class="muted">Abertura a 12 de Novembro — Local: Museu Nacional.</p></article>
+        <article class="card"><h3>Concurso de Jovens Pesquisadores</h3><p class="muted">Inscrições abertas para estudos sobre história contemporânea.</p></article>
+      </div>
+    </section>
+
+    <section id="parceiros">
+      <h2 style="font-family:Montserrat, sans-serif;color:var(--accent)">Parceiros</h2>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+        <div class="card" style="min-width:160px;text-align:center">Universidade X</div>
+        <div class="card" style="min-width:160px;text-align:center">Museu Y</div>
+        <div class="card" style="min-width:160px;text-align:center">Instituto Z</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contactos">
+    <div class="grid">
+      <div style="padding:10px">
+        <h3 style="color:var(--accent)">Fundação Agostinho Neto</h3>
+        <p class="muted">Rua Exemplo, Luanda, Angola<br>Telefone: +244 9XX XXX XXX<br>Email: contacto@fundacaoan.ao</p>
+        <div style="margin-top:12px"><a class="btn" href="#doar" style="background:var(--accent);color:#000">Apoiar Fundação</a></div>
+      </div>
+      <div style="padding:10px">
+        <h4 style="color:var(--accent)">Newsletter</h4>
+        <p class="muted">Receba notícias e convites para eventos.</p>
+        <form onsubmit="event.preventDefault();alert('Obrigado! Inscrição efetuada.');">
+          <input type="email" placeholder="seu@email.com" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#000;color:#fff">
+          <div style="margin-top:10px"><button class="btn" style="background:var(--accent);color:#000;padding:10px 12px;border-radius:8px">Subscrever</button></div>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href="#doar"]').forEach(a=>a.addEventListener('click',()=>{
+      alert('Obrigado pelo interesse em apoiar a Fundação. Em breve abriremos o portal de doações.');
+    }));
+  </script>
+</body>
+</html>

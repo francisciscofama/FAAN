@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fundação Agostinho Neto</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg:#ffffff; 
+      --muted:#B3208D;
+      --accent:#d4af37; 
+      --lg:#FFFFFF;
+      --lg2:#faf7f7;
+      --card:#FFFFFF;
+    }
+    body {margin:0;background:var(--bg);color:var(--muted);line-height:1.6}
+    h1,h2,h3,h4,h5 {font-family:Montserrat, sans-serif;}
+    .logo {
+      width:54px;height:54px;
+      display:flex;align-items:center;justify-content:center;
+      background:var(--lg);color:var(--muted);
+      border:2px solid var(--accent);border-radius:8px;font-weight:700;
+    }
+    .card {border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.15);}
+    .gallery img {width:100%;border-radius:8px;object-fit:cover;transition:transform .3s}
+    .gallery img:hover {transform:scale(1.05)}
+    footer {background:#000;color:#fff;padding:40px 0}
+    footer h3, footer h4 {color:var(--accent);}
+    .social-icons a {font-size:20px;color:var(--muted);margin-left:10px;}
+    .social-icons a:hover {color:var(--accent);}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background:var(--lg2)">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="d-flex align-items-center gap-2">
+          <div class="logo">FAAN</div>
+          <div>
+            <div class="fw-bold">Fundação Dr. António A. Neto</div>
+            <small class="text-muted">Memória • Cultura • Educação</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <!-- Ícones de redes sociais -->
+          <div class="social-icons d-none d-lg-flex">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div id="menu" class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
+            <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+            <li class="nav-item"><a class="nav-link" href="#programas">Programas</a></li>
+            <li class="nav-item"><a class="nav-link" href="#biblioteca">Biblioteca</a></li>
+            <li class="nav-item"><a class="nav-link" href="#noticias">Notícias</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contactos">Contactos</a></li>
+          </ul>
+          <img src="logo.png" alt="Logo" class="ms-3" style="width:90px;height:100px;object-fit:cover;">
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="container py-5">
+    <div class="row g-4 align-items-start">
+      <div class="col-lg-8">
+        <h1 class="text-warning">Objetivos da Fundação</h1>
+        <p>Seja bem-vindo ao portal da Fundação Dr. António Agostinho Neto. Nosso objectivo é promover a pesquisa e divulgação da vida e da obra do Dr. António Agostinho Neto; promover actividades para melhorar o bem-estar dos angolanos; e incentivar a criação, inovação, educação, ciência e cultura.</p>
+
+        <div class="d-flex gap-3 mb-4">
+          <a href="#sobre" class="btn btn-warning text-dark fw-bold">Saiba Mais</a>
+          <a href="#programas" class="btn btn-outline-warning">Nossos Programas</a>
+        </div>
+
+        <!-- Slider Bootstrap -->
+        <div id="carousel" class="carousel slide shadow rounded" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img src="angola.jpg" class="d-block w-100 rounded" height="400" alt=""></div>
+            <div class="carousel-item"><img src="drAgostinho1.jpg" class="d-block w-100 rounded" height="400" alt=""></div>
+            <div class="carousel-item"><img src="premio_int.jpg" class="d-block w-100 rounded" height="400" alt=""></div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Galeria -->
+      <aside class="col-lg-4">
+        <div class="card p-3">
+          <h5 class="text-center text-warning">Galeria de Fotos</h5>
+          <div class="row g-2 gallery">
+            <div class="col-6"><img src="drAgostinho.jpg" alt=""></div>
+            <div class="col-6"><img src="drAgostinho1.jpg" alt=""></div>
+            <div class="col-6"><img src="drAgostinho2.jpg" alt=""></div>
+            <div class="col-6"><img src="drAgostinho3.jpg" alt=""></div>
+          </div>
+          <div class="text-center mt-3">
+            <a href="#" class="btn btn-warning text-dark">Ver Mais Fotos</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Seção de Notícias -->
+  <section id="noticias" class="container py-5">
+    <h2 class="text-warning mb-4">Últimas Notícias</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <img src="noticia1.jpg" class="card-img-top rounded" alt="Notícia 1">
+          <div class="card-body">
+            <h5 class="card-title">Título da Notícia 1</h5>
+            <p class="card-text">Resumo da notícia 1. Pode colocar aqui uma breve descrição ou destaque da notícia.</p>
+            <a href="#" class="btn btn-warning text-dark">Ler Mais</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <img src="noticia2.jpg" class="card-img-top rounded" alt="Notícia 2">
+          <div class="card-body">
+            <h5 class="card-title">Título da Notícia 2</h5>
+            <p class="card-text">Resumo da notícia 2. Breve descrição ou destaque.</p>
+            <a href="#" class="btn btn-warning text-dark">Ler Mais</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <img src="noticia3.jpg" class="card-img-top rounded" alt="Notícia 3">
+          <div class="card-body">
+            <h5 class="card-title">Título da Notícia 3</h5>
+            <p class="card-text">Resumo da notícia 3. Breve descrição ou destaque.</p>
+            <a href="#" class="btn btn-warning text-dark">Ler Mais</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Chatbot -->
+  <section id="chatbot" class="container py-5">
+    <h2 class="text-warning mb-4">Chatbot de Atendimento</h2>
+    <div class="card p-3">
+      <div id="chat-window" style="height:300px; overflow-y:auto; border:1px solid #ddd; padding:10px; border-radius:8px; background:#faf7f7;">
+        <p><em>Olá! Como podemos ajudá-lo hoje?</em></p>
+      </div>
+      <div class="input-group mt-3">
+        <input type="text" id="user-input" class="form-control" placeholder="Escreva sua mensagem..." />
+        <button class="btn btn-warning text-dark" onclick="sendMessage()">Enviar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contactos">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h3>Fundação Agostinho Neto</h3>
+          <p>Rua Exemplo, Luanda, Angola<br>Telefone: +244 9XX XXX XXX<br>Email: contacto@fundacaoan.ao</p>
+          <a href="#doar" class="btn btn-warning text-dark">Apoiar Fundação</a>
+        </div>
+        <div class="col-md-6">
+          <h4>Newsletter</h4>
+          <p>Receba notícias e convites para eventos.</p>
+          <form onsubmit="event.preventDefault();alert('Obrigado! Inscrição efetuada.');">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="seu@email.com" required>
+              <button class="btn btn-warning text-dark">Subscrever</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('user-input');
+      const chatWindow = document.getElementById('chat-window');
+      const message = input.value.trim();
+      if(message) {
+        chatWindow.innerHTML += `<p><strong>Você:</strong> ${message}</p>`;
+        chatWindow.innerHTML += `<p><strong>Chatbot:</strong> Em breve responderemos!</p>`;
+        chatWindow.scrollTop = chatWindow.scrollHeight;
+        input.value = '';
+      }
+    }
+  </script>
+</body>
+</html>
